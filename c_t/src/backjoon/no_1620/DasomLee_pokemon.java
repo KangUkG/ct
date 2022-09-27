@@ -5,9 +5,13 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class DasomLee_pokemon {
 
@@ -23,14 +27,31 @@ public class DasomLee_pokemon {
 		int n_cnt = Integer.parseInt(st.nextToken());
 		int m_cnt = Integer.parseInt(st.nextToken());
 		Map<String, Integer> poke_dict = new HashMap<String, Integer>();
+		List<String> poke_list = new ArrayList<String>();
 		for(int i = 0; i < n_cnt;i++) {
-			poke_dict.put(br.readLine(), i+1);
+			String poke = br.readLine();
+			poke_dict.put(poke, i+1);
+			poke_list.add(poke);
 		}
-		for(int i = 0; i < m_cnt;i++) {
-			String question = br.readLine();
+		for(int i =0; i < m_cnt;i++) {
+			String ques = br.readLine();
+			if(isNumber(ques)) {
+				bw.append(poke_list.get(Integer.parseInt(ques)-1)).append("\n");
+			}else {
+				bw.append(Integer.toString(poke_dict.get(ques))).append("\n");
+			}
 		}
-		System.out.println(poke_dict.get("Bulbasaur"));
-		System.out.println(poke_dict.get("bubu"));
-		
+		bw.flush();
 	}
+	
+	private static boolean isNumber(String str) {
+		char ch = str.charAt(0);
+		if(Character.isDigit(ch)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
 }
