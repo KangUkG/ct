@@ -19,29 +19,29 @@ public class Off_brand_name {
 		// 보지 못한 - M 명
 		// N M
 		// n , m 중복 명단 구하기 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		int n_cnt = Integer.parseInt(st.nextToken());
-		int m_cnt = Integer.parseInt(st.nextToken());
-
-		Map<String, Boolean> no_listen = new HashMap<String, Boolean>(); 
-		for(int i = 0; i < n_cnt;i++) {
-			no_listen.put(br.readLine(), true);
-		}
-		List<String> rst_list = new ArrayList<String>(); 
-		for(int i = 0; i < m_cnt;i++) {
-			String rst = br.readLine();
-			if(no_listen.get(rst) != null) {
-				rst_list.add(rst);
-			}
-		}
-		
-		System.out.println(rst_list.size());
-		for(String a: rst_list) {
-			System.out.println(a);
-		}
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		StringTokenizer st = new StringTokenizer(br.readLine());
+//		
+//		int n_cnt = Integer.parseInt(st.nextToken());
+//		int m_cnt = Integer.parseInt(st.nextToken());
+//
+//		Map<String, Boolean> no_listen = new HashMap<String, Boolean>(); 
+//		for(int i = 0; i < n_cnt;i++) {
+//			no_listen.put(br.readLine(), true);
+//		}
+//		List<String> rst_list = new ArrayList<String>(); 
+//		for(int i = 0; i < m_cnt;i++) {
+//			String rst = br.readLine();
+//			if(no_listen.get(rst) != null) {
+//				rst_list.add(rst);
+//			}
+//		}
+//		
+//		System.out.println(rst_list.size());
+//		for(String a: rst_list) {
+//			System.out.println(a);
+//		}
 //		rst_list.sort(new Comparator<String>() {
 //			@Override
 //			public int compare(String o1, String o2) {
